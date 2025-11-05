@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckIcon, BikeIcon } from './icons';
+import AthleteFormModal, { AthleteFormData } from './AthleteFormModal';
 
 interface PricingSectionProps {
   whatsappLink: string;
@@ -86,9 +87,12 @@ const orderedPlans = [
 ].filter(Boolean) as Plan[];
 
 
-const PlanCard: React.FC<{ plan: Plan }> = ({ plan }) => {
+const PlanCard: React.FC<{ plan: Plan; onSelectPlan: (planName: string) => void }> = ({ plan, onSelectPlan }) => {
     const currentPriceInfo = plan.prices.monthly;
-    const dynamicWhatsappLink = generateWhatsAppLink(plan.name);
+
+    const handleSelectPlan = () => {
+        onSelectPlan(plan.name);
+    };
 
     return (
         <div className={`relative bg-white p-8 rounded-xl w-full h-full flex flex-col border transition-all duration-300 hover:shadow-xl hover:-translate-y-2 ${plan.featured ? 'border-2 border-blue-600 shadow-blue-600/10' : 'border-slate-200'}`}>
@@ -114,14 +118,12 @@ const PlanCard: React.FC<{ plan: Plan }> = ({ plan }) => {
                     </li>
                 ))}
             </ul>
-            <a
-                href={dynamicWhatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
+            <button
+                onClick={handleSelectPlan}
                 className={`mt-8 block text-center w-full py-4 px-6 rounded-lg font-bold transition-transform transform hover:scale-105 duration-300 ${plan.featured ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/30' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50'}`}
             >
                 {plan.buttonText}
-            </a>
+            </button>
         </div>
     );
 };
@@ -154,6 +156,57 @@ const ComingSoonCard: React.FC = () => {
 
 
 const PricingSection: React.FC<PricingSectionProps> = ({ whatsappLink }) => {
+    const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleSelectPlan = (planName: string) => {
+        setSelectedPlan(planName);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedPlan(null);
+    };
+
+    const generateWhatsAppMessage = (planName: string, formData: AthleteFormData): string => {
+        const message = `🏃‍♂️ *NOVO ATLETA - ${planName}*
+
+📋 *DADOS PESSOAIS:*
+• Nome: ${formData.nome}
+• Idade: ${formData.idade} anos
+• Peso: ${formData.peso} kg
+• Altura: ${formData.altura} cm
+• Telefone: ${formData.telefone}
+• E-mail: ${formData.email}
+
+🎯 *PERFIL ESPORTIVO:*
+• Experiência: ${formData.experiencia}
+• Disponibilidade: ${formData.disponibilidade}
+
+🏆 *OBJETIVOS:*
+${formData.objetivos}
+
+🩺 *LESÕES/LIMITAÇÕES:*
+${formData.lesoes || 'Nenhuma'}
+
+✅ O atleta tem interesse no plano *${planName}* e está aguardando o próximo passo!`;
+        
+        return message;
+    };
+
+    const handleFormSubmit = (formData: AthleteFormData) => {
+        if (!selectedPlan) return;
+        
+        const message = generateWhatsAppMessage(selectedPlan, formData);
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE_NUMBER}&text=${encodeURIComponent(message)}`;
+        
+        // Abrir WhatsApp
+        window.open(whatsappUrl, '_blank');
+        
+        // Fechar modal
+        handleCloseModal();
+    };
     return (
       <section id="plans" className="py-24 bg-slate-50">
         <div className="container mx-auto px-6 text-center">
@@ -162,16 +215,23 @@ const PricingSection: React.FC<PricingSectionProps> = ({ whatsappLink }) => {
           
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch max-w-screen-xl mx-auto">
               {orderedPlans.slice(0, 1).map(plan => (
-                  <PlanCard key={plan.name} plan={plan} />
+                  <PlanCard key={plan.name} plan={plan} onSelectPlan={handleSelectPlan} />
               ))}
               <div className="lg:col-span-2">
-                 {orderedPlans[1] && <PlanCard key={orderedPlans[1].name} plan={orderedPlans[1]} />}
+                 {orderedPlans[1] && <PlanCard key={orderedPlans[1].name} plan={orderedPlans[1]} onSelectPlan={handleSelectPlan} />}
               </div>
                {orderedPlans.slice(2).map(plan => (
-                  <PlanCard key={plan.name} plan={plan} />
+                  <PlanCard key={plan.name} plan={plan} onSelectPlan={handleSelectPlan} />
               ))}
               <ComingSoonCard />
           </div>
+
+          <AthleteFormModal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            planName={selectedPlan || ''}
+            onSubmit={handleFormSubmit}
+          />
         </div>
       </section>
     );
