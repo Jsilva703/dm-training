@@ -23,7 +23,7 @@ const CoachCarousel: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <div className="relative w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-xl shadow-blue-800/10 group h-[400px]">
+    <div className="relative w-full max-w-xs sm:max-w-sm mx-auto rounded-lg overflow-hidden shadow-xl shadow-blue-800/10 group h-[300px] sm:h-[400px]">
       <div
         className="flex transition-transform ease-in-out duration-700 h-full"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -31,7 +31,7 @@ const CoachCarousel: React.FC = () => {
         {coachImages.map((src, index) => (
           <div
             key={index}
-            className="w-full h-full flex-shrink-0 relative"
+            className="w-full h-full flex-shrink-0 relative min-h-[300px] sm:min-h-[400px]"
           >
             <img
               src={src}
@@ -40,6 +40,10 @@ const CoachCarousel: React.FC = () => {
               style={{ objectPosition: 'center center' }}
               loading="eager"
               decoding="async"
+              onError={(e) => {
+                console.log('Erro ao carregar imagem:', src);
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
         ))}

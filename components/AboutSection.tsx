@@ -23,12 +23,12 @@ const AboutSection: React.FC = () => {
         <h2 className="text-4xl font-bold text-center mb-16 text-slate-900">
           Conheça seu treinador, <span className="text-blue-800">Felipe Damascena</span>
         </h2>
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/3 flex-shrink-0">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          <div className="w-full lg:w-1/3 flex-shrink-0">
             <CoachCarousel />
           </div>
-          <div className="md:w-2/3">
-            <p className="text-lg text-slate-600 leading-relaxed mb-6 text-center md:text-left">
+          <div className="w-full lg:w-2/3">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 text-center lg:text-left">
               "Como atleta e treinador, compreendo a intensidade da jornada que o esporte de endurance impõe. Mais do que superar limites, trata-se de construir consistência, propósito e resiliência.
 
 Na FD Training, nossa missão é transformar ciência em resultado. Não entregamos planilhas — entregamos performance. Cada treino é desenhado de forma estratégica, integrando evidência científica, controle de carga e motivação real, para que cada sessão leve você um passo além do que acreditava possível.

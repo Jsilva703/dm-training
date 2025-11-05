@@ -25,19 +25,23 @@ const App: React.FC = () => {
   return (
     <div className="bg-white text-slate-800 font-sans antialiased">
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 shadow-sm backdrop-blur-lg' : 'bg-transparent'}`}>
-        <div className="container mx-auto px-6 py-2 flex justify-between items-center min-h-[100px]">
+        <div className="container mx-auto px-4 sm:px-6 py-2 flex justify-between items-center min-h-[70px] sm:min-h-[100px]">
           <img
             src="https://mkdocs-201908.s3.sa-east-1.amazonaws.com/1624/production/fb5110662b71c205b16694b4954b58c6_1624/production/Generated_image_2-removebg-preview_1762305105535.png"
             alt="FD Training"
-            className="h-20 md:h-24 w-auto object-contain max-w-[250px]"
+            className="h-14 sm:h-20 md:h-24 w-auto object-contain max-w-[180px] sm:max-w-[250px]"
             loading="eager"
             decoding="async"
+            onError={(e) => {
+              console.log('Erro ao carregar logo header:', e.currentTarget.src);
+              e.currentTarget.style.display = 'none';
+            }}
           />
           <a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-block bg-blue-800 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-900 transition-colors duration-300 text-sm"
+            className="hidden sm:inline-block bg-blue-800 text-white font-bold py-2 px-3 sm:px-5 rounded-lg hover:bg-blue-900 transition-colors duration-300 text-xs sm:text-sm"
           >
             Fale com o Treinador
           </a>
