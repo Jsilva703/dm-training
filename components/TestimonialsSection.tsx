@@ -40,7 +40,7 @@ const TestimonialsSection: React.FC = () => {
   return (
     <section id="testimonials" className="py-24 bg-slate-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16 text-slate-900">Resultados que <span className="text-blue-600">inspiram</span></h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-slate-900">Resultados que <span className="text-blue-800">inspiram</span></h2>
         
         <div className="relative max-w-3xl mx-auto">
           <div className="overflow-hidden relative">
@@ -53,10 +53,10 @@ const TestimonialsSection: React.FC = () => {
                   <div className="bg-white p-8 rounded-lg border border-slate-200 flex flex-col h-full">
                     <p className="text-slate-600 italic mb-6 flex-grow">"{testimonial.quote}"</p>
                     <div className="flex items-center">
-                      <img src={testimonial.photo} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-blue-600" />
+                      <img src={testimonial.photo} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-blue-800" />
                       <div>
                         <h4 className="text-lg font-bold text-slate-900">{testimonial.name}</h4>
-                        <p className="text-blue-600">{testimonial.title}</p>
+                        <p className="text-blue-800">{testimonial.title}</p>
                       </div>
                     </div>
                   </div>
@@ -70,7 +70,7 @@ const TestimonialsSection: React.FC = () => {
               <button
                 key={slideIndex}
                 onClick={() => goToSlide(slideIndex)}
-                className={`w-3 h-3 rounded-full transition-colors duration-300 ${currentIndex === slideIndex ? 'bg-blue-600' : 'bg-slate-300 hover:bg-slate-400'}`}
+                className={`w-3 h-3 rounded-full transition-colors duration-300 ${currentIndex === slideIndex ? 'bg-blue-800' : 'bg-slate-300 hover:bg-slate-400'}`}
                 aria-label={`Go to slide ${slideIndex + 1}`}
               ></button>
             ))}

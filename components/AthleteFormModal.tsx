@@ -79,7 +79,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                   value={formData.nome}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                 />
               </div>
 
@@ -95,7 +95,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                   required
                   min="15"
                   max="80"
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                 />
               </div>
 
@@ -112,7 +112,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                   min="40"
                   max="150"
                   step="0.1"
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                 />
               </div>
 
@@ -128,7 +128,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                   required
                   min="140"
                   max="220"
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                 />
               </div>
 
@@ -143,7 +143,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                   onChange={handleInputChange}
                   required
                   placeholder="(11) 99999-9999"
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                 />
               </div>
 
@@ -157,7 +157,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                 />
               </div>
             </div>
@@ -171,7 +171,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                 value={formData.experiencia}
                 onChange={handleInputChange}
                 required
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               >
                 <option value="">Selecione sua experiência</option>
                 <option value="iniciante">Iniciante (0-1 ano)</option>
@@ -190,7 +190,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                 value={formData.disponibilidade}
                 onChange={handleInputChange}
                 required
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               >
                 <option value="">Selecione sua disponibilidade</option>
                 <option value="3x">3x por semana</option>
@@ -212,7 +212,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                 required
                 rows={3}
                 placeholder="Ex: Completar uma meia maratona, melhorar tempo nos 10k, nadar em águas abertas..."
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               />
             </div>
 
@@ -226,7 +226,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
                 onChange={handleInputChange}
                 rows={2}
                 placeholder="Descreva lesões atuais ou históricas, dores, limitações... (Se não possui, escreva 'Nenhuma')"
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               />
             </div>
 
@@ -240,7 +240,7 @@ const AthleteFormModal: React.FC<AthleteFormModalProps> = ({ isOpen, onClose, pl
               </button>
               <button
                 type="submit"
-                className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                className="flex-1 px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium"
               >
                 Enviar Informações
               </button>

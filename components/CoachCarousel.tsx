@@ -23,7 +23,7 @@ const CoachCarousel: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <div className="relative w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-xl shadow-blue-600/10 group h-[400px]">
+    <div className="relative w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-xl shadow-blue-800/10 group h-[400px]">
       <div
         className="flex transition-transform ease-in-out duration-700 h-full"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -38,6 +38,8 @@ const CoachCarousel: React.FC = () => {
               alt={`Coach Felipe Damascena in action ${index + 1}`}
               className="w-full h-full object-cover absolute inset-0"
               style={{ objectPosition: 'center center' }}
+              loading="eager"
+              decoding="async"
             />
           </div>
         ))}
