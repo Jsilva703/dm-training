@@ -5,18 +5,13 @@ import CoachCarousel from './CoachCarousel';
 const expertiseAreas = [
   {
     icon: <SwimIcon className="w-10 h-10 text-blue-600 mb-4" />,
-    title: "Natação: Técnica e Eficiência",
-    description: "Análise biomecânica, treinos para águas abertas e foco na otimização de cada braçada para máxima performance com menor desgaste."
-  },
-  {
-    icon: <BikeIcon className="w-10 h-10 text-blue-600 mb-4" />,
-    title: "Ciclismo: Potência e Estratégia",
-    description: "Treinos estruturados por zonas de potência (FTP), estratégias para provas longas e ganho de performance em subidas e planos."
+    title: "Natação",
+    description: "Treinos voltados para natação em águas abertas e piscinas, com o foco em otimizar braçadas e trazer mais performance."
   },
   {
     icon: <RunIcon className="w-10 h-10 text-blue-600 mb-4" />,
-    title: "Corrida: Velocidade e Resiliência",
-    description: "Periodização para curtas e longas distâncias, fortalecimento específico para prevenção de lesões e melhora da economia de corrida."
+    title: "Corrida",
+    description: "Periodização do iniciante ao avançado, introduzindo uma metodologia específica para evolução sem lesões e eficiente."
   }
 ];
 
@@ -34,9 +29,13 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="md:w-2/3">
             <p className="text-lg text-slate-600 leading-relaxed mb-6 text-center md:text-left">
-              "Como atleta e treinador, entendo a jornada de superação que o esporte de endurance exige. Minha missão é traduzir a ciência do esporte em um plano prático e motivador para você. Com a DM Training, não vendemos planilhas, construímos performance. Cada treino é um passo estratégico, pensado para sua evolução, seja você um iniciante buscando completar a primeira prova ou um atleta experiente em busca de um novo recorde pessoal."
+              "Como atleta e treinador, compreendo a intensidade da jornada que o esporte de endurance impõe. Mais do que superar limites, trata-se de construir consistência, propósito e resiliência.
+
+Na FD Training, nossa missão é transformar ciência em resultado. Não entregamos planilhas — entregamos performance. Cada treino é desenhado de forma estratégica, integrando evidência científica, controle de carga e motivação real, para que cada sessão leve você um passo além do que acreditava possível.
+
+Seja você um iniciante em busca da primeira linha de chegada ou um atleta experiente em busca de novos recordes, construiremos juntos uma trajetória personalizada, sólida e inspiradora."
             </p>
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
               {expertiseAreas.map((area) => (
                 <div key={area.title} className="bg-slate-50 p-6 rounded-lg border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-blue-300 hover:-translate-y-1">
                   {area.icon}

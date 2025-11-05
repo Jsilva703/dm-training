@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 const coachImages = [
-  "https://picsum.photos/seed/coach-action-1/600/400",
-  "https://picsum.photos/seed/coach-action-2/600/400",
-  "https://picsum.photos/seed/coach-action-3/600/400",
-  "https://picsum.photos/seed/coach-action-4/600/400",
+  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/80b34f8730370b626ca64eb2458c3f6f_1624/production/IMG_1472_1762305654632.JPG",
+  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/e78194c3e97a8e18437de87eb0daa600_1624/production/IMG_1466_1762305835429.JPG",
+  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/b5095d26b8dc19b25891d7c4c8fdf7e8_1624/production/IMG_1468_1762305916529.JPG",
 ];
 
 const CoachCarousel: React.FC = () => {
@@ -24,18 +23,23 @@ const CoachCarousel: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <div className="relative w-full max-w-sm mx-auto aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-xl shadow-blue-600/10 group">
+    <div className="relative w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-xl shadow-blue-600/10 group h-[400px]">
       <div
         className="flex transition-transform ease-in-out duration-700 h-full"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {coachImages.map((src, index) => (
-          <img
+          <div
             key={index}
-            src={src}
-            alt={`Coach Felipe Damascena in action ${index + 1}`}
-            className="w-full h-full object-cover flex-shrink-0"
-          />
+            className="w-full h-full flex-shrink-0 relative"
+          >
+            <img
+              src={src}
+              alt={`Coach Felipe Damascena in action ${index + 1}`}
+              className="w-full h-full object-cover absolute inset-0"
+              style={{ objectPosition: 'center center' }}
+            />
+          </div>
         ))}
       </div>
 

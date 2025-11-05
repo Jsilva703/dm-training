@@ -16,11 +16,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ whatsappLink }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent/60"></div>
       </div>
       <div className="relative z-10 p-6 max-w-3xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-slate-900" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-          DM <span className="text-blue-600">Training</span>
-        </h1>
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <img
+            src="https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/fb5110662b71c205b16694b4954b58c6_1624/production/Generated_image_2-removebg-preview_1762305105535.png"
+            alt="FD Training Logo"
+            className="w-16 h-16 md:w-20 md:h-20 object-contain"
+          />
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+            FD <span className="text-blue-600">Training</span>
+          </h1>
+        </div>
         <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto text-slate-700" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-          Sua evolução no esporte começa aqui. Consultoria esportiva personalizada em natação, ciclismo e corrida.
+          Sua evolução no esporte começa aqui — com um Coach especializado em Corrida e Natação, pronto para levar seu desempenho a outro nível.
         </p>
         <a
           href={whatsappLink}

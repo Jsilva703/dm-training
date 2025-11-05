@@ -9,13 +9,8 @@ const methodologySteps = [
   },
   {
     icon: <CalendarIcon className="w-12 h-12 text-blue-600 mb-4" />,
-    title: "Planejamento 100% Individual",
-    description: "Sua planilha no TrainingPeaks é única. Ela considera suas zonas de treino (potência, ritmo, FC), seus objetivos específicos e se adapta à sua rotina, garantindo o estímulo certo na hora certa."
-  },
-  {
-    icon: <ChartBarIcon className="w-12 h-12 text-blue-600 mb-4" />,
-    title: "Acompanhamento Data-Driven",
-    description: "Analisamos cada treino concluído, cruzando dados de GPS, potência e frequência cardíaca para entender sua evolução, gerenciar a fadiga e ajustar as próximas semanas com precisão."
+    title: "Pace Pro",
+    description: "Sua planilha no Pace Pro é única. Ela considera suas zonas de treino (potência, ritmo, FC), seus objetivos específicos e se adapta à sua rotina, garantindo o estímulo certo na hora certa."
   },
   {
     icon: <ChatBubbleIcon className="w-12 h-12 text-blue-600 mb-4" />,
@@ -29,7 +24,7 @@ const MethodologySection: React.FC = () => {
     <section id="methodology" className="py-24 bg-slate-50">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold mb-16 text-slate-900">Uma metodologia <span className="text-blue-600">focada em você</span></h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {methodologySteps.map((step, index) => (
             <div key={index} className="bg-white border border-slate-200 p-8 rounded-lg flex flex-col items-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-600/10">
               {step.icon}
