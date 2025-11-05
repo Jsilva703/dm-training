@@ -18,7 +18,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ whatsappLink }) => {
       <div className="relative z-10 p-6 max-w-3xl mx-auto">
         <div className="flex items-center justify-center gap-4 mb-4">
           <img
-            src="https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/fb5110662b71c205b16694b4954b58c6_1624/production/Generated_image_2-removebg-preview_1762305105535.png"
+            src="https://mkdocs-201908.s3.sa-east-1.amazonaws.com/1624/production/fb5110662b71c205b16694b4954b58c6_1624/production/Generated_image_2-removebg-preview_1762305105535.png"
             alt="FD Training Logo"
             className="w-16 h-16 md:w-20 md:h-20 object-contain"
           />

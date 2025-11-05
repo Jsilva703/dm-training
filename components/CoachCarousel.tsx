@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 const coachImages = [
-  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/80b34f8730370b626ca64eb2458c3f6f_1624/production/IMG_1472_1762305654632.JPG",
-  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/e78194c3e97a8e18437de87eb0daa600_1624/production/IMG_1466_1762305835429.JPG",
-  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/1624/production/b5095d26b8dc19b25891d7c4c8fdf7e8_1624/production/IMG_1468_1762305916529.JPG",
+  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com/1624/production/80b34f8730370b626ca64eb2458c3f6f_1624/production/IMG_1472_1762305654632.JPG",
+  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com/1624/production/e78194c3e97a8e18437de87eb0daa600_1624/production/IMG_1466_1762305835429.JPG",
+  "https://mkdocs-201908.s3.sa-east-1.amazonaws.com/1624/production/b5095d26b8dc19b25891d7c4c8fdf7e8_1624/production/IMG_1468_1762305916529.JPG",
 ];
 
 const CoachCarousel: React.FC = () => {
